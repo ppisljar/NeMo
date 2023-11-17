@@ -169,6 +169,7 @@ def convert(args):
             plugins.append(MegatronHalfPrecisionPlugin(precision=plugin_precision, device='cuda', scaler=scaler))
         else:
             plugins.append(PipelineMixedPrecisionPlugin(precision=plugin_precision, device='cuda', scaler=scaler))
+        precision = None
 
     nemo_config.precision = precision
     print(f"nemo_config: {nemo_config}")
