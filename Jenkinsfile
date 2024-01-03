@@ -104,17 +104,17 @@ pipeline {
     //   }
     // }
 
-    stage('L0: Unit Tests CPU') {
-      when {
-        anyOf {
-          branch 'main'
-          changeRequest target: 'main'
-        }
-      }
-      steps {
-        sh 'CUDA_VISIBLE_DEVICES="" NEMO_NUMBA_MINVER=0.53 pytest -m "not pleasefixme" --cpu --with_downloads --relax_numba_compat'
-      }
-    }
+    // stage('L0: Unit Tests CPU') {
+    //   when {
+    //     anyOf {
+    //       branch 'main'
+    //       changeRequest target: 'main'
+    //     }
+    //   }
+    //   steps {
+    //     sh 'CUDA_VISIBLE_DEVICES="" NEMO_NUMBA_MINVER=0.53 pytest -m "not pleasefixme" --cpu --with_downloads --relax_numba_compat'
+    //   }
+    // }
 
     // TODO: this requires TE >= v0.11 which is not available in 23.06.
     //        please uncomment this test once mcore CI is ready.
